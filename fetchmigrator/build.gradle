@@ -2,8 +2,6 @@ apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
-apply plugin: 'com.novoda.bintray-release'
-
 buildscript {
     apply from: '../versions.gradle'
     repositories {
@@ -13,7 +11,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_tools_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.novoda:bintray-release:$novoda_bintray_version"
     }
 }
 
@@ -62,15 +59,6 @@ dependencies {
 
     androidTestImplementation "androidx.test:runner:$test_runner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
-}
-
-publish {
-    userOrg = 'tonyofrancis'
-    groupId = 'androidx.tonyodev.fetchmigrator'
-    artifactId = 'xfetchmigrator'
-    publishVersion = library_version
-    desc = 'Migration Assistant for Fetch'
-    website = 'https://github.com/tonyofrancis/fetch'
 }
 
 tasks.withType(Javadoc).all {

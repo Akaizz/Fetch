@@ -4,8 +4,6 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-kapt'
 
-apply plugin: 'com.novoda.bintray-release'
-
 buildscript {
     apply from: '../versions.gradle'
     repositories {
@@ -15,7 +13,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_tools_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.novoda:bintray-release:$novoda_bintray_version"
     }
 }
 
@@ -71,15 +68,6 @@ dependencies {
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test:runner:$test_runner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
-}
-
-publish {
-    userOrg = 'tonyofrancis'
-    groupId = 'androidx.tonyodev.fetch2'
-    artifactId = 'xfetch2'
-    publishVersion = library_version
-    desc = 'Fetch is a simple, powerful, customizable file download manager library for Android.'
-    website = 'https://github.com/tonyofrancis/fetch'
 }
 
 tasks.withType(Javadoc).all {
